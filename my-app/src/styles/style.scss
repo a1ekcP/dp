@@ -1,0 +1,21 @@
+@import 'variables';
+*{
+  font-size: 16px;
+}
+body{
+    background-color: $bg;
+  }
+  .container{
+    max-width: 968px;
+  }
+.blockTitle{
+  font-size: 3rem;
+  color: $primary;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.parTitle{
+  color: $secondary;
+  font-size: 2rem;
+  font-weight: bold;
+}

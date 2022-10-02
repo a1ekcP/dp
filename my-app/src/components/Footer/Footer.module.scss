@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+
+.wrap{
+    background-color: $secondary;
+    color: $text-color-secondary;
+    .nav{
+        a:hover{
+            color: $link-hover;
+        }
+    }
+}
+.contactUs{
+    .input{
+        color: rgb(255, 255, 255);
+        border-radius: unset;
+        background-color: $secondary;
+        outline: 1px solid rgb(255, 255, 255);
+        &::placeholder{
+            color: $text-color-secondary;
+        }
+        &:target{
+            background-color: $secondary;
+        }
+        &:focus{
+            background-color: $secondary;
+            color: $text-color-secondary;
+        }
+    }
+    .button{
+        color: $secondary;
+        background-color: rgb(255, 255, 255)!important;
+        outline: 1px solid rgb(255, 255, 255);
+        border: none;
+        &:hover{
+            color: $text-color-secondary;
+            background-color: $secondary;
+            outline: 1px solid rgb(255, 255, 255);
+        }
+    }
+}
+
+a{
+    color: inherit
+}

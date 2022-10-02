@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+
+.header{
+    background-color: #47A5DE;
+    padding: 40px;
+}
+.title{
+    font-size: 2rem;
+    color: white;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    .items{
+        flex: 1 0 auto;
+    }
+    .countItem{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        button{
+            background-color: #fff;
+            color: $primary;
+            border: 1px solid $primary;
+            &:focus{
+                background-color: #fff;
+                color: $primary;
+                border: 1px solid $primary;
+            }
+            &:hover{
+                background-color: $primary;
+                color: $text-color-secondary;
+                border: 1px solid $text-color-secondary;
+            }
+        }
+    }
+    .emptyCart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 auto;
+        flex-direction: column;
+        h3{
+            font-size: 1.5rem;
+            margin: 10px;
+        }
+    }
+    .footer{
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        align-self: center;
+        width: 100%;
+        .total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title{
+                font-size: 26px;
+                color: #000000;
+            }
+            .dushed{
+                border-bottom: 2px dashed black;
+                margin: 0 10px;
+                flex-grow: 1;
+            }
+        }
+        button{
+            font-size: 23px;
+            padding: 12px;
+        }
+    }
+}

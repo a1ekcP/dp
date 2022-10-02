@@ -1,0 +1,21 @@
+* {
+  font-size: 16px; }
+
+body {
+  background-color: #f4f1f1; }
+
+.container {
+  max-width: 968px; }
+
+.blockTitle {
+  font-size: 3rem;
+  color: #47A5DE;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.parTitle {
+  color: #f55c4a;
+  font-size: 2rem;
+  font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */

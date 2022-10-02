@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.caption{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 70px;
+    color: rgb(0, 0, 0);
+    width: 50%;
+    text-align: left;
+    h3{
+        font-size: 6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        @media (max-width: 576px){
+            font-size: 2.5rem;
+        }
+    }
+    p{
+        font-size: 2rem;
+        font-weight: normal;
+        @media (max-width: 576px){
+            font-size: 1rem;
+        }
+    }
+}
+
+.button{
+    font-size: 1.5rem;
+    border-radius: 16px;
+    padding: 5px 30px;
+    background-color: transparent;
+    &.red{
+        border: 2px solid $secondary;
+        color: $secondary;
+        font-weight: bold;
+        &:hover{
+            color: $text-color-secondary;
+            background-color: $secondary;
+            border: 2px solid $secondary;
+        }
+    }
+    &.blue{
+        border: 2px solid $primary;
+        color: $primary;
+        font-weight: bold;
+        &:hover{
+            color: $text-color-secondary;
+            background-color: $primary;
+            border: 2px solid $primary;
+        }
+    }
+}
