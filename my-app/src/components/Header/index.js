@@ -30,7 +30,7 @@ function Header(){
                                  <NavLink 
                                     to="/" 
                                     className={({ isActive }) => isActive ? styles.activeLink : undefined}>
-                                       Готовна
+                                       Головна
                                  </NavLink>
                               </li>
                               <li>
