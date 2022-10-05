@@ -12,32 +12,62 @@ function Footer(){
                     <Row className={`${styles.nav} py-4 justify-content-between text-center text-lg-start`}>
                         <Col className="mb-4" xs={12} sm={6} lg={3}>
                             <h4 className='mb-4 fw-bold'>Магазин «Поиграємо»</h4>
-                                
-                            <p>вул. Мініна, 1, Київ</p>
-                            <p>02156, Україна</p>
-                            <a href='+380951422308'>+38 095 142-23-08</a>
-                            <p><a href='info@my-domain.ru'>info@my-domain.ru</a></p>
+                            <ul>
+                                <li>
+                                    <p>вул. Мініна, 1, Київ</p>
+                                </li>
+                                <li>
+                                    <p>02156, Україна</p>
+                                </li>
+                                <li>
+                                    <p><a href='+380951422308'>+38 095 142-23-08</a></p>
+                                </li>
+                                <li>
+                                    <p><a href='info@my-domain.ru'>info@my-domain.ru</a></p>
+                                </li>
+                            </ul>
                         </Col>
                         <Col className="mb-4" xs={12} sm={6} lg={3}>
                             <h4 className='mb-4 fw-bold'>Заходьте</h4>
-                                
-                            <p><Link to="/store">Інтернет-магазин</Link></p>
-                            <p><Link to="/about">Про нас</Link></p>
-                            <p><Link to="/social">Зв'язок</Link></p>
+                            <ul>
+                                <li>
+                                    <p><Link to="/store">Інтернет-магазин</Link></p>
+                                </li>
+                                <li>
+                                    <p><Link to="/about">Про нас</Link></p>
+                                </li>
+                                <li>
+                                    <p><Link to="/social">Зв'язок</Link></p>
+                                </li>
+                            </ul>
                         </Col>
                         <Col className="mb-4" xs={12} sm={6} lg={3}>
                            <h4 className='mb-4 fw-bold'>Інформація</h4>
-        
-                           <p><Link to='/qaa'>Відповіді та запитання</Link></p>
-                           <p><Link to='/deliveryAndReturn'>Доставка та повернення</Link></p>
-                           <p><Link to='/politicy'>Політика магазину</Link></p>
+                            <ul>
+                                <li>
+                                    <p><Link to='/qaa'>Відповіді та запитання</Link></p>
+                                </li>
+                                <li>
+                                    <p><Link to='/deliveryAndReturn'>Доставка та повернення</Link></p>
+                                </li>
+                                <li>
+                                    <p><Link to='/politicy'>Політика магазину</Link></p>
+                                </li>
+                            </ul>
                         </Col>
                         <Col className="mb-4" xs={12} sm={6} lg={3}>
                             <h4 className='mb-4 fw-bold'>Соцмережі</h4>
-                                
-                            <p><a href="https://www.facebook.com/">Facebook</a></p>
-                            <p><a href="https://www.instagram.com/">Instagram</a></p>
-                            <p><a href="https://pinterest.com/">Pinterest</a></p>                   
+                            <ul>
+                                <li>
+                                    <p><a href="https://www.facebook.com/">Facebook</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://www.instagram.com/">Instagram</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="https://pinterest.com/">Pinterest</a></p>                   
+                                </li>
+                            </ul>
                         </Col>
                     </Row>
                     <Form className={styles.ContactUs}>

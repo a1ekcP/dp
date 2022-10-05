@@ -2,6 +2,7 @@ import styles from "./FreshProduct.module.scss";
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { useContext } from 'react';
 import ContextValues from '../../context/ContextValues';
+import { Link } from "react-router-dom";
 
 function FreshProducts({freshProducts}){
     const { addToCart, filteredStoreArr } = useContext(ContextValues);
@@ -13,9 +14,13 @@ function FreshProducts({freshProducts}){
                 {freshProducts.map(el => 
                     <Col key={el.id}>
                         <Card className={styles.card}>
-                            <Card.Img 
-                             variant="top" 
-                             src= {el.imgSrc}/>
+                            <Link 
+                              to={`/store/${el.id}`}
+                              className='d-block'>
+                                <Card.Img 
+                                  variant="top" 
+                                  src= {el.imgSrc}/>
+                            </Link>
                             <Card.Body className={`text-center ${styles.body}`}>
                                 <div className={styles.text}>
                                     <Card.Title>{el.name}</Card.Title>
@@ -23,13 +28,13 @@ function FreshProducts({freshProducts}){
                                 </div>
                                 {filteredStoreArr.includes(el) ? 
                                     <Button
-                                     className={styles.button}
-                                     disabled>
+                                      className={styles.button}
+                                      disabled>
                                         Положить в корзину
                                     </Button> : 
                                     <Button 
-                                     onClick={() => addToCart(el)}
-                                     className={styles.button}>
+                                      onClick={() => addToCart(el)}
+                                      className={styles.button}>
                                         Положить в корзину
                                     </Button>
                                 }

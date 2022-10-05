@@ -7,10 +7,12 @@ function StoreInputSearch({searchValue, setSearchValue}){
 
     return (
         <div className={`my-4 text-end ${styles.search}`}>
+            
             <input 
                 onChange={toSearch} 
                 className={styles.input} 
                 type="search" 
+                placeholder="я шукаю ..."
                 value={searchValue}>
             </input>
         </div>

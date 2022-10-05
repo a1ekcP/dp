@@ -3,23 +3,15 @@
 .search{
     overflow: hidden;
     .input{
-        padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+        padding: 10px 10px 10px 40px;
         font-size: 18px;
         color: rgb(0, 0, 0);
-        outline: 1px solid $primary;
+        outline: 1px solid rgb(0, 0, 0);
         border-radius: 10px;
-        transition: 0.6s ease-in-out;
-        background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png) center left no-repeat;
-        background-size: contain;
-        &:active{
-            transform: translateX(0);
-            transition: 0.6s ease-in-out;
-        }
+        background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png) left 5px center no-repeat;
+        background-size: 10%;
         &::placeholder{
             color: rgb(0, 0, 0);
-        }
-        &:focus{
-            width: 50%
         }
     }
 }

@@ -22,10 +22,6 @@
    }
 }
 
-// .activeLink{
-//    color: $secondary!important;
-// }
-
 .nav{
    display: none;
    ul{
@@ -52,7 +48,8 @@
       }
    }
    @media (min-width: 992px) {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
       width: 100%;
    }
 }
