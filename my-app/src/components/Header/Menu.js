@@ -9,7 +9,7 @@ function Menu({styles}){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const { aboutObj, connectObj, storeObj} = useContext(ContextValues);
+    const { aboutObj, socialObj, storeObj} = useContext(ContextValues);
 
     return (
         <div className={styles.menuBurger}>
@@ -38,7 +38,7 @@ function Menu({styles}){
                                <Link to="/about" onClick={handleClose}>{aboutObj.title}</Link>
                             </li>
                             <li className="me-md-4 me-xl-5">
-                               <Link to="/social" onClick={handleClose}>{connectObj.title}</Link>
+                               <Link to="/social" onClick={handleClose}>{socialObj.title}</Link>
                             </li>
                         </ul>
                     </nav>

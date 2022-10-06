@@ -18,40 +18,39 @@ function App() {
   const [filteredStoreArr, setFilteredStoreArr] = useState([]);
   const [storeObj, setStoreObj] = useState({});
   const [aboutObj, setAboutObj] = useState({});
-  const [connectObj, setConnectObj] = useState({});
-  const [adressShopsArr, setAdressShopsArr] = useState([]);
+  const [socialObj, setSocialObj] = useState({});
+  // const [adressShopsArr, setAdressShopsArr] = useState([]);
   const [show, setShow] = useState(false);
-  
 
 
-  useEffect(() => {
-    setAdressShopsArr([
-      {
-        id: 1,
-        title : 'Магазин 1',
-        adress: 'ул. Братиславська, 32а, Київ',
-        index: '02156',
-        country: 'Україна',
-        tell: '+38 095 142-23-08'
-      },
-      {
-        id: 2,
-        title : 'Магазин 2',
-        adress: 'ул. Довженко, 7, Київ',
-        index: '38420',
-        country: 'Україна',
-        tell: '+38 123 456-78-90'
-      },
-      {
-        id: 3,
-        title : 'Магазин 3',
-        adress: 'ул. Мініна, 1, Київ',
-        index: '41062',
-        country: 'Україна',
-        tell: '+38 098 765-43-21'
-        }
-    ])
-  }, [])
+  // useEffect(() => {
+  //   setAdressShopsArr([
+  //     {
+  //       id: 1,
+  //       title : 'Магазин 1',
+  //       adress: 'ул. Братиславська, 32а, Київ',
+  //       index: '02156',
+  //       country: 'Україна',
+  //       tell: '+38 095 142-23-08'
+  //     },
+  //     {
+  //       id: 2,
+  //       title : 'Магазин 2',
+  //       adress: 'ул. Довженко, 7, Київ',
+  //       index: '38420',
+  //       country: 'Україна',
+  //       tell: '+38 123 456-78-90'
+  //     },
+  //     {
+  //       id: 3,
+  //       title : 'Магазин 3',
+  //       adress: 'ул. Мініна, 1, Київ',
+  //       index: '41062',
+  //       country: 'Україна',
+  //       tell: '+38 098 765-43-21'
+  //       }
+  //   ])
+  // }, [])
 
   useEffect(() => {
     setStoreObj(
@@ -71,7 +70,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setConnectObj(
+    setSocialObj(
       {
         title: "Зв'язок",
         imgSrc: './img/connect/connect.webp'
@@ -219,7 +218,7 @@ function App() {
     setFilteredStoreArr(productsStoreArr.filter(el => el.addToCart));
   }, [productsStoreArr])
 
-
+  
   const addToCart = (product) => {
     setProductsStoreArr(productsStoreArr.map(el => ({...el, addToCart: el.id === product.id ? true : el.addToCart})));
   }
@@ -232,16 +231,14 @@ function App() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log(filteredStoreArr)
 
 
   const value = {
     productsStoreArr,
     filteredStoreArr,
-    adressShopsArr, 
     storeObj,
     aboutObj,
-    connectObj,
+    socialObj,
     show, 
     setProductsStoreArr,
     setFilteredStoreArr, 
@@ -263,7 +260,7 @@ function App() {
             <Route path="about" element={<About titleBlock={aboutObj} />} />
             <Route path="store" element={<Store titleBlock={storeObj} />}/>
             <Route path="/store/:productId" element={<Product />} />
-            <Route path="social" element={<Social titleBlock={connectObj} />} />
+            <Route path="social" element={<Social titleBlock={socialObj} />} />
             <Route path="qaa" element={<QAA/>}/>
             <Route path="deliveryAndReturn" element={<Delivery/>}/>
             <Route path="politicy" element={<Politicy/>}/>

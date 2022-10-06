@@ -7,7 +7,7 @@ import Menu from './Menu';
 import ContextValues from '../../context/ContextValues';
 
 function Header(){
-   const { aboutObj, connectObj, storeObj} = useContext(ContextValues);
+   const { aboutObj, socialObj, storeObj} = useContext(ContextValues);
 
     return (
       <header>
@@ -45,7 +45,7 @@ function Header(){
                               </li>
                               <li>
                                  <NavLink to="/social" className={({ isActive }) => isActive ? styles.activeLink: undefined}>
-                                    {connectObj.title}
+                                    {socialObj.title}
                                  </NavLink>
                               </li>
                            </ul>

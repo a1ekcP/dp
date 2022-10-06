@@ -4,15 +4,17 @@ import { useParams } from "react-router-dom";
 import ContextValues from "../context/ContextValues";
 
 function Product(){
-    const { productsStoreArr, addToCart, handleShow } = useContext(ContextValues);
+    const { productsStoreArr, filteredStoreArr, addToCart, handleShow } = useContext(ContextValues);
 
     const [ product, setProduct ]= useState({})
     const { productId } = useParams();
 
-
     useEffect(() => {
-        setProduct(productsStoreArr.filter(el => el.id === +productId)[0]);
+        if(productsStoreArr?.length){
+            setProduct(productsStoreArr.filter(el => el.id === +productId)[0]);
+        }
     }, [productsStoreArr, productId]);
+
 
     return (
         <Container>
@@ -35,9 +37,7 @@ function Product(){
                         </Carousel>
                         <Card.Body>
                             <Card.Text>
-                                <p>
-                                    Это описание товара. Здесь вы можете рассказать о товаре подробнее: напишите о размерах, материалах, уходе и любых других важных моментах.
-                                </p>
+                                Это описание товара. Здесь вы можете рассказать о товаре подробнее: напишите о размерах, материалах, уходе и любых других важных моментах.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -48,18 +48,21 @@ function Product(){
                         <p>Артикул: {product.article}</p>
                         <p>{product.price} UAH</p>
 
-                        { product.addToCart ? <Button 
-                                                variant="warning"
-                                                onClick={handleShow} 
-                                                className='mb-4'>
-                                                    Готово к покупке
-                                               </Button> : 
-                                               <Button 
-                                                variant="info"
-                                                onClick={() => addToCart(product)} 
-                                                className='mb-4'>
-                                                    Положить в корзину
-                                               </Button>
+
+                        { filteredStoreArr.includes(product) ? (
+                            <Button 
+                              variant="warning"
+                              onClick={handleShow} 
+                              className='mb-4'>
+                                Готово к покупке
+                            </Button>
+                                ) : (
+                            <Button 
+                                variant="info"
+                                onClick={() => addToCart(product)} 
+                                className='mb-4'>
+                                    Положить в корзину
+                            </Button>)
                         }
                         <Accordion defaultActiveKey="0">
                             <Accordion.Item eventKey="0">
