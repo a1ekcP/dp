@@ -13,6 +13,11 @@
     height: 50%!important;
     text-align: left;
     z-index: 2;
+    @media (max-width: 576px){
+        left: 20px;
+        top: 0;
+        width: 100%!important;
+    }
     h3{
         font-size: 5rem;
         font-weight: 600;
@@ -64,6 +69,9 @@
     "A A A A  A A A A  B B B B"
     "A A A A  A A A A  C C C C"
     "D D D D  E E E E  E E E E";
+    @media(max-width: 767.5px){
+        display: block;
+    }
     div:nth-child(1){
         grid-area: A;
     }

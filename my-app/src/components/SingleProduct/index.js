@@ -9,7 +9,6 @@ function SingleProduct({productStore}){
 
     return (
         <Col>
-        {/* 'position-relative product__card' */}
             <Card className={styles.item}>
                 <Link 
                     to={`/store/${productStore.id}`}

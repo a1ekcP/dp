@@ -21,6 +21,9 @@
         bottom: 19%;
         left: -100%;
         transition: 0.6s ease-in-out;
+        @media (max-width:767.5px) {
+            display: none;
+        }
         .button{
             background-color: antiquewhite;
             color: black;

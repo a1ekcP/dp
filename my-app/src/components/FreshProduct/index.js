@@ -10,9 +10,9 @@ function FreshProducts({freshProducts}){
     return (
         <section className={styles.FreshProducts}>
             <h2 className={styles.title}>СВЕЖИЕ ПОСТУПЛЕНИЯ</h2>
-            <Row>
+            <Row className={styles.row}>
                 {freshProducts.map(el => 
-                    <Col key={el.id}>
+                    <Col key={el.id} className={styles.items}>
                         <Card className={styles.card}>
                             <Link 
                               to={`/store/${el.id}`}

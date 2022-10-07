@@ -23,6 +23,9 @@
         border: 1px solid $primary;
         color: $primary;
     }
+    @media (max-width: 575.5px){
+        display: none;
+    }
 }
 .body{
     position: relative;
@@ -32,6 +35,7 @@
     padding: 0;
     transition: 0.2s ease-in-out;
     overflow: hidden;
+    height: 100%;
     &:hover{
         box-shadow: 0 0 40px black;
         transform: translateY(-5px);
@@ -45,6 +49,15 @@
         .text{
             opacity: 0;
             transition: 0.4s ease-in-out;
+        }
+    }
+}
+@media (max-width: 575.5px){
+    .row{
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        .items{
+            flex-basis: 40%;
         }
     }
 }

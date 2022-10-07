@@ -1,8 +1,8 @@
-import styles from "./HomeCarusel.module.scss"
+import styles from "./HomeMain.module.scss"
 import { Link } from "react-router-dom";
 import { Card, Carousel} from 'react-bootstrap';
 
-function HomeCarusel(){
+function HomeMain(){
 
    return (
       <section className={`${styles.presentation} mb-5 py-4`}>
@@ -17,11 +17,11 @@ function HomeCarusel(){
                       alt="First slide"
                      />
                      <Carousel.Caption className={styles.caption}>
-                        <h3>Играем вместе</h3>
-                        <p>Новая колекция поездов</p>
+                        <h3>Граємо разом</h3>
+                        <p>Новая колекція потягів</p>
                         <Link 
                          to="/store"
-                         className={`${styles.button} ${styles.red}`} 
+                         className={`${styles.button} ${styles.red} position-relative`} 
                          type="submit">В магазин
                         </Link>
                      </Carousel.Caption>
@@ -33,11 +33,11 @@ function HomeCarusel(){
                       alt="Second slide"
                      />
                      <Carousel.Caption className={`fs-2 fw-bold ${styles.caption}`}>
-                        <h3>Детки растут</h3>
-                        <p>С нашими развивающими игрушками</p>
+                        <h3>Діти ростуть</h3>
+                        <p>З нашими розвиваючими іграшками</p>
                         <Link 
                          to="/store" 
-                         className={`${styles.button} ${styles.red}`} 
+                         className={`${styles.button} ${styles.red} position-relative`} 
                          type="submit">В магазин
                         </Link>
                      </Carousel.Caption>
@@ -49,15 +49,17 @@ function HomeCarusel(){
                   <Card.Img
                    src="https://static.wixstatic.com/media/ea26fd_28f3dfe8832f4ac1a2fc0f21095e5d3d~mv2_d_2000_1887_s_2.jpg/v1/fill/w_560,h_560,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ea26fd_28f3dfe8832f4ac1a2fc0f21095e5d3d~mv2_d_2000_1887_s_2.jpg"
                    alt="Second slide" />
-                  <Card.ImgOverlay className="h-25">
-                     <Card.Title className='fs-2 fw-bold mb-4'>
-                        Про наш магазин
+                  <Card.ImgOverlay>
+                     <Card.Title className='fs-2 fw-bold'>
+                        <h3 className="fw-bold mb-4">
+                           Про наш магазин
+                        </h3>
+                        <Link 
+                        to="/about" 
+                        className={`${styles.button} ${styles.blue}`}>
+                           Дiзнатись
+                        </Link>
                      </Card.Title>
-                     <Link 
-                      to="/about" 
-                      className={`${styles.button} ${styles.blue}`}>
-                        Дiзнатись
-                     </Link>
                   </Card.ImgOverlay>
                </Card> 
             </div>
@@ -72,19 +74,21 @@ function HomeCarusel(){
                   alt="train"/>
             </div>
             <div>
-               <Card>
+               <Card className={styles.discount}>
                   <Card.Img
                    src="https://static.wixstatic.com/media/ea26fd_6bced28aa460434dbf4a50f7e847d646~mv2_d_3632_4826_s_4_2.jpg/v1/crop/x_0,y_929,w_3632,h_2413/fill/w_602,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ea26fd_6bced28aa460434dbf4a50f7e847d646~mv2_d_3632_4826_s_4_2.jpg"
                    alt="Second slide" />
-                  <Card.ImgOverlay className="h-25">
-                     <Card.Title className='fs-2 fw-bold w-75 mb-4'>
-                        Знижка 20% на всi iграшковi потяги
+                  <Card.ImgOverlay>
+                     <Card.Title className='fs-2 fw-bold w-75'>
+                        <h3 className="fw-bold mb-4">
+                           Знижка 20% на всi iграшковi потяги
+                        </h3>
+                        <Link 
+                        to="/store" 
+                        className={`${styles.button} ${styles.blue}`}>
+                           В магазин
+                        </Link>
                      </Card.Title>
-                     <Link 
-                     to="/store" 
-                     className={`${styles.button} ${styles.blue}`}>
-                        В магазин
-                     </Link>
                   </Card.ImgOverlay>
                </Card>
             </div>
@@ -93,4 +97,4 @@ function HomeCarusel(){
     )
 }
 
-export default HomeCarusel;
+export default HomeMain;
