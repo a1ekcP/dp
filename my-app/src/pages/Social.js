@@ -1,43 +1,14 @@
 import '../styles/style.scss';
 import { Card, Col, Row, Container } from 'react-bootstrap';
-// import { useContext } from 'react';
+import { useContext } from 'react';
 import PageTitle from '../components/PageTitle';
-// import ContextValues from '../context/ContextValues';
+import ContextValues from '../context/ContextValues';
 import SocialForm from '../components/SocialForm';
-import { useEffect, useState } from 'react';
 
 function Social({titleBlock}){
-   const [adressShopsArr, setAdressShopsArr] = useState([]);
-
-   useEffect(() => {
-      setAdressShopsArr([
-        {
-          id: 1,
-          title : 'Магазин 1',
-          adress: 'вул. Братиславська, 32а, Київ',
-          index: '02156',
-          country: 'Україна',
-          tell: '+38 095 142-23-08'
-        },
-        {
-          id: 2,
-          title : 'Магазин 2',
-          adress: 'вул. Довженко, 7, Київ',
-          index: '38420',
-          country: 'Україна',
-          tell: '+38 123 456-78-90'
-        },
-        {
-          id: 3,
-          title : 'Магазин 3',
-          adress: 'вул. Мініна, 1, Київ',
-          index: '41062',
-          country: 'Україна',
-          tell: '+38 098 765-43-21'
-          }
-      ])
-    }, [])
-
+   
+   const {adressShopsArr} = useContext(ContextValues);
+   console.log(adressShopsArr[0])
 
     return (
         	<Container>

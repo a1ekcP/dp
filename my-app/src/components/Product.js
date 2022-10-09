@@ -14,7 +14,7 @@ function Product(){
             setProduct(productsStoreArr.filter(el => el.id === +productId)[0]);
         }
     }, [productsStoreArr, productId]);
-
+    
 
     return (
         <Container>
@@ -48,8 +48,8 @@ function Product(){
                         <p>Артикул: {product.article}</p>
                         <p>{product.price} UAH</p>
 
-
-                        { filteredStoreArr.includes(product) ? (
+                        {/* {filteredStoreArr.some(id )} */}
+                        { product.addToCart ? (
                             <Button 
                               variant="warning"
                               onClick={handleShow} 

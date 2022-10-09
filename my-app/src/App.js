@@ -19,38 +19,38 @@ function App() {
   const [storeObj, setStoreObj] = useState({});
   const [aboutObj, setAboutObj] = useState({});
   const [socialObj, setSocialObj] = useState({});
-  // const [adressShopsArr, setAdressShopsArr] = useState([]);
+  const [adressShopsArr, setAdressShopsArr] = useState([]);
   const [show, setShow] = useState(false);
 
 
-  // useEffect(() => {
-  //   setAdressShopsArr([
-  //     {
-  //       id: 1,
-  //       title : 'Магазин 1',
-  //       adress: 'ул. Братиславська, 32а, Київ',
-  //       index: '02156',
-  //       country: 'Україна',
-  //       tell: '+38 095 142-23-08'
-  //     },
-  //     {
-  //       id: 2,
-  //       title : 'Магазин 2',
-  //       adress: 'ул. Довженко, 7, Київ',
-  //       index: '38420',
-  //       country: 'Україна',
-  //       tell: '+38 123 456-78-90'
-  //     },
-  //     {
-  //       id: 3,
-  //       title : 'Магазин 3',
-  //       adress: 'ул. Мініна, 1, Київ',
-  //       index: '41062',
-  //       country: 'Україна',
-  //       tell: '+38 098 765-43-21'
-  //       }
-  //   ])
-  // }, [])
+  useEffect(() => {
+    setAdressShopsArr([
+      {
+        id: 1,
+        title : 'Магазин 1',
+        adress: 'ул. Братиславська, 32а, Київ',
+        index: '02156',
+        country: 'Україна',
+        tell: '+38 095 142-23-08'
+      },
+      {
+        id: 2,
+        title : 'Магазин 2',
+        adress: 'ул. Довженко, 7, Київ',
+        index: '38420',
+        country: 'Україна',
+        tell: '+38 123 456-78-90'
+      },
+      {
+        id: 3,
+        title : 'Магазин 3',
+        adress: 'ул. Мініна, 1, Київ',
+        index: '41062',
+        country: 'Україна',
+        tell: '+38 098 765-43-21'
+        }
+    ])
+  }, [])
 
   useEffect(() => {
     setStoreObj(
@@ -223,7 +223,10 @@ function App() {
     setProductsStoreArr(productsStoreArr.map(el => ({...el, addToCart: el.id === product.id ? true : el.addToCart})));
   }
   
-  const removeFromCart = (id) => setFilteredStoreArr(prev => prev.filter(el => el.id !== id));
+  const removeFromCart = (id) => {
+    setProductsStoreArr(productsStoreArr.map(el => ({...el, addToCart: el.id === id ? false : el.addToCart})))
+  }
+  // setFilteredStoreArr(prev => prev.filter(el => el.id !== id));
 
   const  addProd = (id) => setFilteredStoreArr(prev => prev.map(el => el.id === id ? ({...el, count: el.count += 1}) : el));
   const minusProd = (id) => setFilteredStoreArr(prev => prev.map(el => el.id === id ? ({...el, count: el.count -= 1}) : el));
@@ -236,6 +239,7 @@ function App() {
   const value = {
     productsStoreArr,
     filteredStoreArr,
+    adressShopsArr,
     storeObj,
     aboutObj,
     socialObj,
