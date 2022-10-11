@@ -224,9 +224,8 @@ function App() {
   }
   
   const removeFromCart = (id) => {
-    setProductsStoreArr(productsStoreArr.map(el => ({...el, addToCart: el.id === id ? false : el.addToCart})))
+    setProductsStoreArr(productsStoreArr.map(el => ({...el, addToCart: el.id === id ? false : el.addToCart, count: 1})))
   }
-  // setFilteredStoreArr(prev => prev.filter(el => el.id !== id));
 
   const  addProd = (id) => setFilteredStoreArr(prev => prev.map(el => el.id === id ? ({...el, count: el.count += 1}) : el));
   const minusProd = (id) => setFilteredStoreArr(prev => prev.map(el => el.id === id ? ({...el, count: el.count -= 1}) : el));
